@@ -3,9 +3,7 @@ import { context } from "../../context/data/Context";
 import { Card } from "../index";
 const ProductCard = () => {
   const { products } = useContext(context);
-
-  console.log(products);
-
+  
   return (
     <div className="w-[80%] m-auto my-10 shadow p-10">
       <h1 className="text-3xl md:text-4xl"> Our Latest Collection </h1>

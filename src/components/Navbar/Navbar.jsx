@@ -12,7 +12,7 @@ const Navbar = () => {
   const cartItems = useSelector((state) => state.cart);
 
   const handleLogout = () => {
-    localStorage.clear("user");
+    localStorage.removeItem("user");
     navigate("/login");
   };
 
@@ -141,12 +141,19 @@ const Navbar = () => {
                   Admin
                 </Link>
               )}
-              {user && (
+              {user ? (
                 <button
                   onClick={handleLogout}
                   className="btn btn-link no-underline "
                 >
                   Logout
+                </button>
+              ) : (
+                <button
+                  onClick={handleLogin}
+                  className="btn btn-link no-underline "
+                >
+                  Login
                 </button>
               )}
             </div>
