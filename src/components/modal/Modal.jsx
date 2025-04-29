@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Modal = ({
   name,
@@ -11,16 +12,30 @@ const Modal = ({
   setPhoneNumber,
   buyNow,
 }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
+
   const handleBuyNow = () => {
-    document.getElementById("my_modal_3").close();
-    buyNow();
+    if (user) {
+      document.getElementById("my_modal_3").close();
+      buyNow();
+    } else {
+      navigate("/login");
+    }
+    console.log(user);
   };
 
   return (
     <>
       <button
         className="btn btn-primary text-white w-full my-2"
-        onClick={() => document.getElementById("my_modal_3").showModal()}
+        onClick={() => {
+          if (user) {
+            document.getElementById("my_modal_3").showModal();
+          } else {
+            navigate("/login");
+          }
+        }}
       >
         Buy Now
       </button>
@@ -34,8 +49,7 @@ const Modal = ({
           </form>
           <div className="w-8/10 m-auto tex-lg flex flex-col gap-0">
             <label className="text-lg" htmlFor="name">
-              {" "}
-              Enter Full Name{" "}
+              Enter Full Name
             </label>
             <input
               name="name"
@@ -47,8 +61,7 @@ const Modal = ({
             />
             <br />
             <label className="text-lg" htmlFor="address">
-              {" "}
-              Enter Full Address{" "}
+              Enter Full Address
             </label>
             <input
               name="address"
@@ -60,8 +73,7 @@ const Modal = ({
             />
             <br />
             <label className="text-lg" htmlFor="pincode">
-              {" "}
-              Enter Pincode{" "}
+              Enter Pincode
             </label>
             <input
               name="pincode"
@@ -73,8 +85,7 @@ const Modal = ({
             />
             <br />
             <label className="text-lg" htmlFor="number">
-              {" "}
-              Enter Mobile Number{" "}
+              Enter Mobile Number
             </label>
             <input
               name="number"
@@ -89,8 +100,7 @@ const Modal = ({
               onClick={handleBuyNow}
               className="btn btn-primary text-white"
             >
-              {" "}
-              Order Now{" "}
+              Order Now
             </button>
           </div>
           <p className="text-sm text-gray-600 mt-2">
@@ -104,5 +114,3 @@ const Modal = ({
 };
 
 export default Modal;
-
-// 3:14:00
