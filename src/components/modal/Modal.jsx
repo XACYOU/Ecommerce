@@ -22,7 +22,6 @@ const Modal = ({
     } else {
       navigate("/login");
     }
-    console.log(user);
   };
 
   return (

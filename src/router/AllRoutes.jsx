@@ -16,7 +16,7 @@ export const ProtectedRouteUser = ({children}) => {
 export const ProtectedRouteAdmin = ({children}) => {
   const user = JSON.parse(localStorage.getItem("user"));
 
-  const isAdmin = user.user.email === "saurabhnegi@gmail.com"
+  const isAdmin = user.user.email === "admin@gmail.com"
 
   if (isAdmin) {
     return children;
