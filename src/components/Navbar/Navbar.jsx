@@ -8,7 +8,7 @@ const Navbar = () => {
   const { theme, toggleTheme } = useContext(context);
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
-  const isAdmin = user?.user?.email === "saurabhnegi@gmail.com";
+  const isAdmin = user?.user?.email === "admin@gmail.com";
   const cartItems = useSelector((state) => state.cart);
 
   const handleLogout = () => {
