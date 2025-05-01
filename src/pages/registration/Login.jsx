@@ -29,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <div data-theme={theme} className=" border w-full h-[100vh]">
+    <div data-theme={theme} className=" w-full h-[100vh]">
       <div className="border border-[#e5e5e5] shadow-lg text-sm md:text-md w-[50%] lg:w-[35%] xl:w-[25%] m-auto mt-50 px-5 py-8 rounded-xl">
         <h1 className="font-bold text-center text-2xl"> Login </h1>
         <div className="w-[80%] m-auto flex flex-col items-center align-middle my-8 gap-5">
@@ -123,6 +123,34 @@ const Login = () => {
             Signup{" "}
           </Link>
         </p>
+      </div>
+      <div className=" text-sm md:text-md w-9/10 sm:w-[50%] lg:w-[35%] xl:w-[25%] mx-auto mt-5 shadow-xl rounded-xl">
+        <div role="alert" className="alert alert-vertical sm:alert-horizontal">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="stroke-info h-6 w-6 shrink-0"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <div>
+            <h3 className="font-bold">
+              For Admin Access use following credentials.
+            </h3>
+            <div className="text-xs">
+              <b>Email:-</b> admin@gmail.com
+            </div>
+            <div className="text-xs">
+              <b>Pass:-</b> 123456#aA
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
